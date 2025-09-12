@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+<title>DİRENÇLERİN SERİ VE PARALEL BAĞLANMASI</title>
+<link rel="stylesheet" href="html5/ph/app.css">
+<style>
+body {
+  transform: scale(1.5);
+  transform-origin: top center; /* Üst merkeze yerleştirme */
+  width: 97.67vw; /* Gerekirse genişlik ayarı */
+  overflow: hidden; /* Kaymayı engelle */
+ 
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden; /* Kayma engellenir */
+  margin: 0; /* Varsayılan margin sıfırlanır */
+}
+/* Dark Theme CSS Variables */
+:root {
+    --bg-primary: #0f1419;
+    --bg-secondary: #1a1f2e;
+    --bg-tertiary: #252a3a;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent-blue: #00d4ff;
+    --accent-cyan: #085053;
+    --accent-green: #22c55e;
+    --accent-orange: #ff8c00;
+    --accent-red: #ef4444;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glow-blue: rgba(0, 212, 255, 0.3);
+    --glow-cyan: rgba(0, 245, 255, 0.3);
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+    color: #00d4ff;
+    border: 2px solid var(--accent-blue);
+    border-radius: 15px;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 0 0 10px var(--glow-cyan);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin: 0 auto 30px;
+    max-width: 800px;
+}
+		
+div#total { 
+    width: 800px; 
+    height: 450px;
+    margin: 0 auto;
+    background: #212942;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+}
+
+div#canvas { 
+    width: 780px; 
+    height: 450px;
+    background: var(--bg-primary);
+	bottom : 0px;
+    border-radius: 15px;
+    border: 2px solid var(--accent-blue);
+    box-shadow: 0 0 20px var(--glow-blue);
+}
+
+div#panel { 
+    left: 600px; 
+    width: 200px; 
+    height: 448px;
+	BOTTOM: 2PX;
+    background: var(--bg-tertiary);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+} 
+
+button { 
+    width: 180px;
+	height : 50px
+    padding: 8px 12px;
+
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+	line-height : 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+	color : #085053;
+   
+}
+.pos1 { 
+    left: 10px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.pos3 { 
+    left: 160px;
+    color: var(--text-secondary);
+}
+
+input[type="text"] { 
+    left: 60px; 
+    width: 80px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 8px var(--glow-cyan);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent-cyan);
+}
+
+label {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+span { 
+    white-space: nowrap;
+    color: var(--text-primary);
+}
+
+/* Canvas styling */
+canvas {
+    border-radius: 12px;
+}
+
+/* Mobil Uyumluluk */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 18px;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
+    
+    div#total {
+        width: 100%;
+        max-width: 100vw;
+        height: auto;
+        flex-direction: column;
+        display: flex;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    
+    div#canvas {
+        width: 100%;
+        height: 250px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+    
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    
+    div#panel {
+        position: relative !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    
+    div#panel > div {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    button {
+        width: 100% !important;
+        max-width: 200px;
+        padding: 12px;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    
+    input[type="text"] {
+        position: relative !important;
+        left: auto !important;
+        width: 80px !important;
+        margin: 0 10px;
+    }
+    
+    .pos1 {
+        position: relative !important;
+        left: auto !important;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+    
+    .pos3 {
+        position: relative !important;
+        left: auto !important;
+        margin-left: 5px;
+    }
+    
+    input[type="checkbox"] {
+        margin-right: 8px;
+    }
+    
+    label {
+        margin-left: 5px;
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    div#total {
+        padding: 5px;
+    }
+    
+    div#canvas {
+        height: 200px;
+    }
+    
+    button {
+        font-size: 12px;
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+</style>
+<script src="html5/phen/page_phen.js"></script>
+<script src="html5/phen/combinationresistors.js"></script>
+<script src="html5/phen/combinationresistors_en.js"></script>
+<meta name="description" content="HTML5 app: DİRENÇLERİN SERİ VE PARALEL BAĞLANMASI">
+
+<meta name="keywords" content="physics, electrodynamics, voltage, Volt, current, amperage, Amp&egrave;re, resistance, Ohm">
+</head>
+<body>
+<h1>DİRENÇLERİN SERİ VE PARALEL BAĞLANMASI</h1>
+<div id="total">
+  <div id="canvas"><canvas id="cv" width=600 height=450>This browser doesn't support HTML5 canvas!</canvas></div>
+  <div id="panel">
+    <div style="top: 20px;"><button id="bu1" style="background-color: #00ffff;"></button></div>
+    <div style="top: 70px;"><span class="pos1" id="ip1a"></span></div>
+    <div style="top: 100px;"><input type="text" id="ip1b"><span id="ip1c" class="pos3"></span></div>
+    <div style="top: 140px;"><span class="pos1" id="ip2a"></span></div>
+    <div style="top: 170px;"><input type="text" id="ip2b"><span id="ip2c" class="pos3"></span></div>
+    <div style="top: 210px;"><button id="bu2" style="background-color: #ffc800;"></button></div>
+    <div style="top: 260px;"><button id="bu3" style="background-color: #ffc800;"></button></div>
+    <div style="top: 310px;"><span class="pos1" id="lb0"></span></div>
+    <div style="top: 340px;"><input type="checkbox" id="cb1" name="cb1" value=""><label for="cb1" id="lb1"></label></div>
+    <div style="top: 370px;"><input type="checkbox" id="cb2" name="cb2" value=""><label for="cb2" id="lb2"></label></div>
+    <div style="top: 410px;"><span class="pos1" id="author"></span></div>
+    <div style="top: 430px;"><span class="pos1" id="translator"></span></div> 
+  </div>
+</div>
+<script>endPage("combinationresistors",11,9,2002,18,2,2020);</script>
+
+</html>
