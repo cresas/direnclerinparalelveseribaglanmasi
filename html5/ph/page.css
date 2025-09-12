@@ -1,0 +1,267 @@
+/*==========================================*/
+/* Dark Theme Stylesheet für einfache Seite */
+/* Modernized Dark Theme - 2025            */
+/*==========================================*/
+
+/* CSS Variables für Dark Theme */
+:root {
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f2e;
+  --bg-tertiary: #252a3a;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --accent-blue: #00d4ff;
+  --accent-cyan: #085053;
+  --accent-green: #22c55e;
+  --accent-orange: #ff8c00;
+  --accent-red: #ef4444;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glow-blue: rgba(0, 212, 255, 0.3);
+  --glow-cyan: rgba(0, 245, 255, 0.3);
+}
+
+/* Reset für Blockelemente */
+
+div, h1, h2, h3, h4, p, table, ul, ol {
+  margin: 0;
+  padding: 0;
+  }
+  
+/* Rand */
+  
+dl, h1, h2, h3, h4, ol, p, ul {
+  margin: 10px 20px 10px 20px;
+  }
+  
+/* Noch nicht besuchter Link */
+
+a:link {                    
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  }
+
+/* Schon besuchter Link */  
+  
+a:visited {                            
+  color: var(--accent-blue);    
+  }
+  
+/* Mauszeiger auf Link */
+
+a:hover {                                   
+  color: var(--accent-orange);
+  text-decoration: underline;
+  text-shadow: 0 0 8px var(--glow-cyan);
+  }
+  
+/* Inhalt der Seite */
+
+body {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--text-primary);
+  min-height: 100vh;
+  }
+  
+/* Eintrag Definitionsliste */
+
+dd {
+  margin-bottom: 25px;
+  }
+  
+/* Zentriertes Blockelement (div) */
+
+div.center {
+  margin: 20px auto 20px;
+  text-align: center;
+  }
+  
+/* Link zum Inhaltsverzeichnis */
+
+div#Index {
+  width: 170px; 
+  margin: 20px auto 20px auto;
+  border: 2px solid var(--accent-cyan);
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+/* Link zum Inhaltsverzeichnis, Logo (oben) */
+  
+div#Index1 {
+  padding: 12px;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  border: 1px solid var(--border-color);
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  color: var(--bg-primary);
+  font-weight: 600;
+  }
+  
+/* Link zum Inhaltsverzeichnis, Text (unten) */
+  
+div#Index2 {
+  padding: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--accent-cyan);
+  }
+  
+/* Eingerahmte Definition */
+
+div.Def {
+  margin: 20px auto 20px;   
+  padding: 15px;               
+  background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  border: 2px solid var(--accent-green);
+  border-radius: 12px;
+  font-size: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+/* Eingerahmter Satz */
+
+div.Satz {
+  margin: 20px auto 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  border: 2px solid var(--accent-orange);
+  border-radius: 12px;
+  font-size: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+/* Überschrift Definitionsliste */
+
+dt {
+  margin-bottom: 8px;          
+  font-size: 18px;       
+  font-weight: bold;    
+  }
+  
+/* Hervorhebung eines Begriffs */
+  
+em.Begriff {
+  font-style: normal;
+  color: #0000ff;
+  }
+  
+/* Überschrift 1. Ordnung */
+  
+h1 {
+  border: 2px solid var(--accent-blue);
+  padding: 15px 20px;
+  background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  color: var(--accent-cyan);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 15px;
+  text-shadow: 0 0 10px var(--glow-cyan);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+/* Überschrift 2. Ordnung */
+  
+h2 {
+  padding: 10px 0px 10px 0px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--accent-cyan);
+  border-bottom: 2px solid var(--border-color);
+  }
+  
+/* Überschrift 3. Ordnung */
+  
+h3 {
+  padding: 8px 0px 8px 0px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--accent-blue);
+  }
+  
+/* Trennlinie */
+  
+hr.Trennlinie {                        
+  margin: 50px auto 50px;  
+  width: 40%;          
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  }
+  
+/* Bild für Link zur Hauptseite */
+  
+img.Link {
+  margin-right: 10px;
+  vertical-align: middle;
+  }
+  
+/* Item einer Liste */
+  
+li {
+  margin-left: 30px;
+  }
+  
+/* Geordnete Liste */
+  
+ol {
+  line-height: 1.4;
+  }
+  
+/* Absatz */
+  
+p {
+  line-height: 1.3;
+  }
+  
+/* Absatz für URL usw. */
+  
+p.Ende {                                
+  font-size: 13px;  
+  }
+  
+/* Liste der Symbole in einer Formel */
+  
+p.Formel {
+  font: normal 14px monospace; 
+  }
+  
+/* Eingerahmte Formel */
+  
+span.Formel {
+  display: block;
+  margin: 15px auto 15px;
+  background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  border: 2px solid var(--accent-cyan);
+  border-radius: 10px;
+  padding: 12px;       
+  text-align: center;  
+  font-size: 20px;
+  color: var(--accent-cyan);
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 15px var(--glow-cyan);
+  }
+  
+/* Inline-Element (span) ohne automatischen Zeilenumbruch */
+  
+span.nobr {
+  white-space: nowrap;
+  }
+  
+/* Ungeordnete Liste */
+  
+ul {
+  line-height: 1.4;
+  }
+  

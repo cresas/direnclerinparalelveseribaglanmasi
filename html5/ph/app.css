@@ -1,0 +1,180 @@
+/*==========================================*/
+/* Dark Theme Stylesheet für HTML5-App     */
+/* Modernized with Dark Theme - 2025       */
+/*==========================================*/
+
+/* Das Stylesheet für normale Seiten (page.css) wird nachgeladen. */
+
+@import url(page.css);
+
+/* CSS Variables für Dark Theme */
+:root {
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f2e;
+  --bg-tertiary: #252a3a;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --accent-blue: #00d4ff;
+  --accent-cyan: #085053;
+  --accent-green: #22c55e;
+  --accent-orange: #ff8c00;
+  --accent-red: #ef4444;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glow-blue: rgba(0, 212, 255, 0.3);
+  --glow-cyan: rgba(0, 245, 255, 0.3);
+}
+
+/* Schaltknopf */
+  
+button {
+  height: 30px;       
+  border-radius: 8px;
+  border: 2px solid var(--accent-cyan);
+  background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  color: var(--text-primary);
+  margin-left: 10px;
+  font: bold 12px 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  } 
+
+button:hover {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--glow-cyan);
+}
+
+/* Gesamte App */
+   
+div#total {
+  position: relative;
+  margin: 20px auto 20px;
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  }
+  
+/* Zeichenfläche */
+
+div#canvas {
+  position: absolute;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent-blue);
+  border-radius: 15px;
+  box-shadow: 0 0 20px var(--glow-blue);
+  }
+  
+/* Schaltfläche */
+  
+div#panel, div#panel1, div#panel2 {
+  position: absolute;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  font: bold 12px 'Inter', sans-serif;
+  color: var(--text-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+/* Zeile einer Schaltfläche */
+  
+div#panel div , div#panel1 div, div#panel2 div {
+  position: absolute;
+  }
+  
+/* Optionsfeld */
+
+input[type="checkbox"] {
+  margin-left: 10px;
+  border-radius: 4px;
+  accent-color: var(--accent-cyan);
+  }
+  
+/* Radiobutton */
+
+input[type="radio"] {
+  margin-left: 10px;
+  accent-color: var(--accent-cyan);
+  }
+  
+/* Schieberegler */
+
+input[type="range"] {
+  position: absolute;
+  left: 10px;
+  accent-color: var(--accent-cyan);
+  }
+  
+/* Eingabefeld */
+
+input[type="text"] {
+  position: absolute;
+  padding: 4px 8px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: bold 12px 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  } 
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--glow-cyan);
+}
+  
+/* Text für Optionsfeld oder Radiobutton */
+  
+label {
+  margin-left: 5px;
+  vertical-align: 2px;
+  color: var(--text-primary);
+  font-weight: 500;
+  }
+  
+/* Auswahlfeld */
+
+select {
+  position: absolute;
+  top: -3px;
+  left: 10px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  font: bold 12px 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  } 
+  
+/* Inline-Element (span) innerhalb einer Schaltfläche */
+  
+div#panel span, div#panel1 span, div#panel2 span {
+  position: absolute;
+  white-space: nowrap;
+  font: bold 12px 'Inter', sans-serif;
+  color: var(--text-primary);
+  }
+  
+/* Textbereich */
+
+textarea {
+  position: absolute;
+  padding: 8px;
+  left: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font: bold 12px 'Inter', sans-serif;
+  line-height: 1.25;
+  }
+  
+
+  
