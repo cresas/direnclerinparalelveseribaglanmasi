@@ -27,7 +27,7 @@
 /* Schaltknopf */
   
 button {
-  height: 30px;       
+  height: 40px;       
   border-radius: 8px;
   border: 2px solid var(--accent-cyan);
   background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
@@ -38,6 +38,7 @@ button {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  line-height : 1px;!important
   } 
 
 button:hover {

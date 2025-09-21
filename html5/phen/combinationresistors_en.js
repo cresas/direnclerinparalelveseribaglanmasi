@@ -8,7 +8,7 @@ var text02 = "PİLİN GERİLİMİ:"; // Pilin gerilimi
 var text03 = "DİRENÇ:"; // Direnç
 var text04 = "DİRENÇ EKLE (SERİ BAĞLA)"; // Direnç ekle (seri bağla)
 var text05 = "DİRENÇ EKLE (PARALEL BAĞLA)"; // Direnç ekle (paralel bağla)
-var text06 = "METRELER:"; // Metreler
+var text06 = "ÖLÇÜMLER:"; // Metreler
 var text07 = "GERİLİM"; // Gerilim
 var text08 = "AKIM"; // Akım
 

@@ -10,6 +10,9 @@
 <title>DİRENÇLERİN SERİ VE PARALEL BAĞLANMASI</title>
 <link rel="stylesheet" href="html5/ph/app.css">
 <style>
+<style>
+
+
 /* Dark Theme CSS Variables */
 :root {
     --bg-primary: #0f1419;
@@ -34,8 +37,31 @@ body {
     margin: 0;
     padding: 20px;
     min-height: 100vh;
+     overflow: hidden
+
+  
+  
+ 
+     
+@media screen and (min-width: 769px) {
+ 
+	
+
+body {
+  transform: scale(1.5);
+  transform-origin: top center; /* Üst merkeze yerleştirme */
+  width: 97.67vw; /* Gerekirse genişlik ayarı */
+  overflow: hidden; /* Kaymayı engelle */
+ 
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden; /* Kayma engellenir */
+  margin: 0; /* Varsayılan margin sıfırlanır */
+}
+
+}
 h1 {
     background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
     color: #00d4ff;
@@ -70,6 +96,7 @@ div#canvas {
     border-radius: 15px;
     border: 2px solid var(--accent-blue);
     box-shadow: 0 0 20px var(--glow-blue);
+	
 }
 
 div#panel { 
@@ -95,7 +122,7 @@ button {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0px;
-	line-height : 10px;
+	line-height : 15px;
 }
 
 button:hover {
@@ -122,7 +149,7 @@ input[type="text"] {
     border-radius: 6px;
     color: var(--text-primary);
     padding: 4px 8px;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -213,6 +240,10 @@ canvas {
         padding: 12px;
         font-size: 14px;
         margin: 5px 0;
+		button { 
+
+	line-height : 10px;
+}
     }
     
     input[type="text"] {
@@ -257,6 +288,7 @@ canvas {
     button {
         font-size: 12px;
         padding: 10px;
+			line-height : 10px;
     }
     
     h1 {
