@@ -30,5 +30,5 @@ var ohm = "\u03A9"; // Ohm (Unicode zaten mevcut)
 
 // Semboller:
 
-var decimalSeparator = ".";  // Ondalık ayırıcı (virgül/nokta)
+var decimalSeparator = ",";  // Ondalık ayırıcı (virgül/nokta) - DEĞİŞTİRİLDİ
 var symbolMult = "\u00D7";  // Çarpan sembolü

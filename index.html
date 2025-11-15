@@ -326,6 +326,37 @@ canvas {
     <div style="top: 430px;"><span class="pos1" id="translator"></span></div> 
   </div>
 </div>
+<script>
+    // Kullanıcının virgül (,) girmesi durumunda bunu nokta (.) olarak değiştirir.
+    // Bu, uygulamanın sayıları doğru bir şekilde işlemesini sağlar (genellikle JavaScript/Fizik uygulamaları noktayı ondalık ayırıcı olarak kullanır).
+    function handleDecimalInput(event) {
+        const input = event.target;
+        // Girdi alanının değerindeki tüm virgülleri noktayla değiştir.
+        input.value = input.value.replace(/,/g, '.');
+    }
+
+    // Olası sayısal giriş alanlarına bu fonksiyonu ekleriz
+    document.addEventListener('DOMContentLoaded', () => {
+        const input1 = document.getElementById('ip1b');
+        const input2 = document.getElementById('ip2b');
+        
+        // Kullanıcı bir tuşa bastığında (input), odaklandığında (focus) ve odağı kaybettiğinde (blur) kontrol et.
+        if (input1) {
+            input1.addEventListener('input', handleDecimalInput);
+            input1.addEventListener('blur', handleDecimalInput); // Odağı kaybedince de son kez kontrol
+        }
+        
+        if (input2) {
+            input2.addEventListener('input', handleDecimalInput);
+            input2.addEventListener('blur', handleDecimalInput);
+        }
+
+        // Uygulamanın çıktıları için: Uygulamanın sonuçları ekrana yazdığı kısmı da düzenlemek gerekir (örn: R_eş değeri).
+        // Ancak bu, uygulamanın kendi JavaScript dosyaları (combinationresistors.js vb.) içinde yapıldığı için,
+        // bu dosyaların içeriğini bilmeden bir düzenleme yapmak mümkün değildir.
+        // Bu nedenle, sadece kullanıcı girişini (input) yerelleştirdik.
+    });
+</script>
 <script>endPage("combinationresistors",11,9,2002,18,2,2020);</script>
 
 </html>
